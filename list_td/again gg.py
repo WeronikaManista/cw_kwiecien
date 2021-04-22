@@ -1,6 +1,6 @@
 import random
 
-learn = {'dzien dobry': 'buendos dias', 'chlopak': 'chico'}
+learn = {'dzien dobry': 'buendos dias', 'chlopak': 'chico', 'siema' : 'hola', "dupa" : "culo"}
 learned = {}
 repeats = {}
 
@@ -10,8 +10,8 @@ d = {'VENEZUELA':'CARACAS', 'CANADA':'OTTAWA'}
 random.choice(list(d.values()))
 """
 
-# dict_keys(['dzien', 'chlopak'])  <----print(learn.keys())
-#['dzien', 'chlopak'] <-- print(list(learn.keys()))
+# dict_keys(['dzien', 'chlopak'])  <----wyjdzie to z tego: print(learn.keys())
+# ['dzien', 'chlopak'] <-- wyjdzie to z tego:              print(list(learn.keys()))
 
 
 # random.choices(list(learn.keys()))
@@ -29,8 +29,8 @@ for _ in range(0, len(learn.keys())):
         # learned['dzien'] = item
 
 
-    # elif z != 'dzien dobry':
-    else:
+
+    else: # elif z != 'dzien dobry':
         item = learn.get(random_key)
         repeats.update({random_key: item})
 
@@ -38,36 +38,34 @@ for _ in range(0, len(learn.keys())):
 
 #------------------------------------------------------
 
-# x = input('Chłopak to po hiszpansku: ')
-# if x == 'chico':
+# j = input(f"{learn.get(random_key)} po polsku: ")
+# if j == random_key:
 #     print('Poprawnie.')
-#     tym = learn.pop('chlopak')
-#     learned.update({'chlopak': tym})
-#
-# elif z != 'chico':
-#     tym = learn.pop('chlopak')
-#     repeats.update({'chlopak': tym})
+#     item = learn.pop(random_key)
+#     learned.update({random_key: item})
+#     # learned['dzien'] = item
 
 print("POWTORKA")
 
 for powtorka in range(1,3):
 
-if len(repeats.keys()) > 0:
-    print('Cwiczenia ze slownikiem repeats')
-    print('Repity', repeats)
-    p = input(f"{learn.get(random_key)} po polsku: ")
-    if p == random_key:
-        print('Poprawnie.')
-        item = repeats.get(random_key)
-        learned.update({random_key: item})
+    if len(repeats.keys()) > 0:
+        print('Cwiczenia ze slownikiem repeats')
+        print('Repity', repeats)
+
+        p = input(f"{learn.get(random_key)} po polsku: ")
+        if p == random_key:
+            print('Poprawnie.')
+            item = repeats.get(random_key)
+            learned.update({random_key: item})
 
 
-if len(repeats.keys()) > 0:
-    gg = input((f"{learn.get(random_key)} Chlopak to po hiszpansku: ")
-        if gg == random_key:
-        print('Poprawnie.')
-        kreml = repeats.get(random_key)
-        learned.update({random_key: kreml})
+    # if len(repeats.keys()) > 0:
+    #     gg = input((f"{learn.get(random_key)} Chlopak to po hiszpansku: ")
+    #         if gg == random_key:
+    #         print('Poprawnie.')
+    #         kreml = repeats.get(random_key)
+    #         learned.update({random_key: kreml})
 
 
 
